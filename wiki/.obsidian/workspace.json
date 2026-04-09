@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "851f2193b6f5eb17",
+    "type": "split",
+    "children": [
+      {
+        "id": "3657514d3824d211",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "12147f41affffc70",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "931484a3f97b875d",
+    "type": "split",
+    "children": [
+      {
+        "id": "fb2548d29eef1264",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8e3585c85daac936",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "7a833562ce0a8d2f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "13c6a7fadc3902ca",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "635b3f6778994cec",
+    "type": "split",
+    "children": [
+      {
+        "id": "411ff2439ee70bd3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8a67b750c162f735",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "218e2b2875584fbb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "945a5f7f343ed782",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0f26f7d0b26b0d27",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "e3974fbbf9722c56",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "12147f41affffc70",
+  "lastOpenFiles": [
+    "how-sarthak-decides.md",
+    "lessons-from-failures.md",
+    "the-flobiz-product-vision.md",
+    "the-goel-family-builder.md",
+    "how-projects-are-born.md",
+    "trading-vs-product-parallels.md",
+    "how-sarthak-builds.md",
+    "_changelog.md",
+    "building-with-claude-code.md",
+    "_index.md",
+    "knowledge-compounding.md",
+    "biometric-trading-journal.md",
+    "The Goel Family Builder.md",
+    "automation-as-lifestyle.md",
+    "mbb-sales-and-data-insights.md",
+    "mbb-pricing-architecture.md",
+    "vidtext-content-pipeline.md",
+    "builder-content-strategy.md",
+    "flo-analytics-pipeline.md",
+    "direct-sql-vs-llm-pipeline.md",
+    "sierra-chart-hard-won-learnings.md",
+    "regional-language-as-core-value.md",
+    "zero-cost-architecture.md",
+    "myvoicebooksai-product.md",
+    "trading-discipline-and-psychology.md",
+    "6e-trading-system.md"
+  ]
+}
