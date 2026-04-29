@@ -2,6 +2,10 @@
 
 **A Karpathy-style LLM knowledge base -- raw materials in, structured wiki out.**
 
+<p align="center">
+  <img src="docs/second-brain-card.png" alt="Second Brain skill card" width="500" />
+</p>
+
 Second Brain is a personal knowledge management system where an LLM acts as librarian. You drop source materials (articles, conversations, tweets, notes) into `raw/`, and the system compiles them into an interconnected wiki with backlinks, cross-domain connections, and conflict resolution. Think Obsidian, but the writing and linking is done by Claude.
 
 ## `/brain` Skill
