@@ -4,6 +4,22 @@
 
 Second Brain is a personal knowledge management system where an LLM acts as librarian. You drop source materials (articles, conversations, tweets, notes) into `raw/`, and the system compiles them into an interconnected wiki with backlinks, cross-domain connections, and conflict resolution. Think Obsidian, but the writing and linking is done by Claude.
 
+## `/brain` Skill
+
+This repo also includes the `/brain` slash command skill (`SKILL.md`) for Claude Code. The skill provides six commands for interacting with the knowledge base:
+
+```
+/brain ingest              # Process new raw materials into wiki articles
+/brain compile             # Rebuild the entire wiki from all raw sources
+/brain query "topic"       # Ask a question across all knowledge
+/brain lint                # Check wiki health (broken links, orphans, stale content)
+/brain connect             # Surface cross-domain insights and patterns
+/brain status              # Show stats: article count, word count, last update
+/brain add "insight"       # Quick-capture a note for later ingestion
+```
+
+**Trigger phrases:** "add to my brain", "brain ingest", "brain compile", "brain query", "connect the dots", "knowledge base", "what does my brain say about"
+
 ## Architecture
 
 ```
@@ -11,6 +27,7 @@ raw/          -- Append-only source materials (you curate what goes in)
 wiki/         -- LLM-compiled articles (Claude writes and maintains these)
 outputs/      -- Query responses and synthesized reports
 scripts/      -- Automation (daily brain feed cron)
+SKILL.md      -- Claude Code /brain slash command definition
 ```
 
 ### Data Flow
