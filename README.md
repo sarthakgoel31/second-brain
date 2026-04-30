@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" alt="Second Brain Logo" width="120" />
+</p>
+
 # Second Brain
 
 **A Karpathy-style LLM knowledge base -- raw materials in, structured wiki out.**
