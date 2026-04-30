@@ -4,144 +4,118 @@
 
 # Second Brain
 
-**A Karpathy-style LLM knowledge base -- raw materials in, structured wiki out.**
+**Karpathy-style LLM knowledge base. Raw materials go in, interconnected wiki articles come out.**
 
-<p align="center">
-  <img src="docs/second-brain-card.png" alt="Second Brain skill card" width="500" />
-</p>
+## Why
 
-Second Brain is a personal knowledge management system where an LLM acts as librarian. You drop source materials (articles, conversations, tweets, notes) into `raw/`, and the system compiles them into an interconnected wiki with backlinks, cross-domain connections, and conflict resolution. Think Obsidian, but the writing and linking is done by Claude.
+You read articles, have conversations, take notes, learn from failures -- but none of it compounds. Six months later, you cannot find the insight that changed how you think about a problem. Second Brain is a personal knowledge base where an LLM reads everything you feed it, synthesizes structured wiki articles with cross-references, and surfaces non-obvious connections across domains. It is Obsidian meets a librarian who reads everything and never forgets.
 
-## `/brain` Skill
+## How
 
-This repo also includes the `/brain` slash command skill (`SKILL.md`) for Claude Code. The skill provides six commands for interacting with the knowledge base:
+1. Drop raw materials into `raw/` -- articles, papers, tweets, conversation notes, brain dumps
+2. Run `/brain ingest` -- the LLM reads every source fully, extracts key concepts, creates wiki articles with backlinks and source attribution
+3. Run `/brain query "how does trading discipline apply to product?"` -- get answers grounded in your own knowledge
+4. Run `/brain connect` -- discover cross-domain patterns: trading lessons that apply to product, engineering patterns that mirror business strategies
+5. A daily cron (`scripts/daily-brain-feed.sh`) extracts insights from Claude Code sessions and saves them as raw notes
 
 ```
-/brain ingest              # Process new raw materials into wiki articles
-/brain compile             # Rebuild the entire wiki from all raw sources
-/brain query "topic"       # Ask a question across all knowledge
-/brain lint                # Check wiki health (broken links, orphans, stale content)
-/brain connect             # Surface cross-domain insights and patterns
-/brain status              # Show stats: article count, word count, last update
-/brain add "insight"       # Quick-capture a note for later ingestion
+/brain ingest              # Process new raw materials into wiki
+/brain compile             # Full recompilation from all sources
+/brain query "topic"       # Ask questions across all knowledge
+/brain connect             # Surface cross-domain patterns
+/brain lint                # Health check: broken links, orphans
+/brain add "insight"       # Quick-capture a note
+/brain status              # Stats dashboard
 ```
 
-**Trigger phrases:** "add to my brain", "brain ingest", "brain compile", "brain query", "connect the dots", "knowledge base", "what does my brain say about"
+## Features
+
+| Command | What It Does | Detail |
+|---------|-------------|--------|
+| `/brain ingest` | Process new raw materials | Reads fully (never chunks), creates/updates wiki articles, adds backlinks |
+| `/brain compile` | Full wiki recompilation | Scans all sources, finds gaps, rebuilds stale articles, runs lint |
+| `/brain query` | Answer from knowledge base | Loads relevant articles, synthesizes grounded answer, saves to outputs |
+| `/brain lint` | Wiki health check | Broken backlinks, orphan articles, missing attributions, stale content |
+| `/brain connect` | Cross-domain pattern finder | Surfaces trading-to-product parallels, engineering-to-business mirrors |
+| `/brain add` | Quick capture | Saves note to `raw/notes/` for later ingestion |
+| `/brain status` | Stats dashboard | Article count, domain breakdown, word count, last ingest date |
+
+## Tech
+
+| Component | Technology |
+|-----------|------------|
+| Runtime | Claude Code slash command skill |
+| Storage | Flat Markdown files (Obsidian-compatible) |
+| Backlinks | `[[kebab-case]]` wiki-style cross-references |
+| Frontmatter | YAML (title, domains, dates, source attribution) |
+| Daily feed | Bash cron extracting Claude session insights |
+| Domains | 7 tags: Trading, Product, Engineering, AI/LLM, Business, Content, Growth |
+| Articles | 34 compiled articles across all domains |
 
 ## Architecture
 
 ```
-raw/          -- Append-only source materials (you curate what goes in)
-wiki/         -- LLM-compiled articles (Claude writes and maintains these)
-outputs/      -- Query responses and synthesized reports
-scripts/      -- Automation (daily brain feed cron)
-SKILL.md      -- Claude Code /brain slash command definition
+second-brain/
+├── CLAUDE.md                 # Schema: article format, rules, operations, domain tags
+├── SKILL.md                  # Skill definition for /brain commands
+├── raw/                      # Append-only source materials (human curates)
+│   ├── articles/             # Web articles, blog posts
+│   ├── papers/               # Research papers, PDFs
+│   ├── tweets/               # Interesting tweets and threads
+│   ├── conversations/        # Key insights from conversations
+│   ├── notes/                # Brain dumps + daily session extracts
+│   └── media/                # Images, screenshots, diagrams
+├── wiki/                     # LLM-compiled articles (34 articles, 7 domains)
+│   ├── _index.md             # Master index by domain
+│   ├── _changelog.md         # What changed and when
+│   ├── how-sarthak-builds.md
+│   ├── zero-cost-architecture.md
+│   ├── 6e-trading-system.md
+│   ├── schema-design-as-leverage.md
+│   └── ... (34 total)
+├── outputs/                  # Query responses, lint reports, connection reports
+├── scripts/
+│   └── daily-brain-feed.sh   # Cron: extracts Claude session insights into raw/notes/
+└── docs/
+    └── logo.png
 ```
 
-### Data Flow
+## Knowledge Domains
 
-```
-Raw Sources --> Ingest --> Wiki Articles --> Query/Connect --> Insights
-     |                        |
-     |                   Backlinks +
-     |                Cross-references
-     |
-  articles, conversations, tweets, notes, papers, media
-```
+| Domain | Tag | Scope | Articles |
+|--------|-----|-------|----------|
+| Trading | `#trading` | 6E futures, price action, risk management, psychology | 5 |
+| Product | `#product` | User research, prioritization, SMB insights, conversion | 11 |
+| Engineering | `#engineering` | Architecture, system design, zero-cost infra, debugging | 8 |
+| AI/LLM | `#ai` | Prompt engineering, RAG, agents, schema design | 4 |
+| Business | `#business` | SaaS metrics, pricing, go-to-market | 2 |
+| Content | `#content` | Audience building, storytelling, builder content | 2 |
+| Growth | `#growth` | Learning frameworks, mental models, career | 2 |
 
-## Domains
+## Rules the LLM Follows
 
-Knowledge is organized across 7 domains. Every article is tagged with one or more:
+| Rule | Why |
+|------|-----|
+| Never fabricate knowledge | Every insight must trace to a source in `raw/` |
+| Prefer depth over breadth | One deep article over five shallow ones |
+| Write for future-self | Include enough background for months-later reading |
+| Cross-link aggressively | Every article links to at least 2 others -- connections are the value |
+| Preserve dissent | When thinking evolves, keep old reasoning with dates |
+| Kebab-case backlinks | `[[how-sarthak-decides]]` not `[[How Sarthak Decides]]` for Obsidian |
+| Index under 200 entries | Archive or merge when the wiki grows |
 
-| Domain | Tag | Scope |
-|---|---|---|
-| Trading | `#trading` | 6E futures, price action, market structure, risk management, psychology |
-| Product | `#product` | Product thinking, user research, prioritization, SMB insights |
-| Engineering | `#engineering` | Architecture, system design, performance, developer tools |
-| AI/LLM | `#ai` | LLM patterns, prompt engineering, RAG, agents, AI products |
-| Business | `#business` | FloBiz context, SaaS metrics, growth, pricing, go-to-market |
-| Content | `#content` | Content creation, audience building, storytelling, distribution |
-| Growth | `#growth` | Personal development, career, learning frameworks, mental models |
+## Status
 
-## Operations
-
-| Command | What it does |
-|---|---|
-| `/brain ingest` | Read new raw materials, create or update wiki articles, add backlinks |
-| `/brain compile` | Full recompilation -- scan all sources, fill gaps, rebuild index |
-| `/brain query <question>` | Answer questions grounded in wiki content, save response to outputs |
-| `/brain lint` | Health check -- find broken backlinks, orphan articles, missing sources |
-| `/brain connect` | Surface non-obvious cross-domain patterns and connections |
-| `/brain status` | Show index stats, recent updates, domain coverage |
-
-## Wiki Articles
-
-The compiled wiki currently includes 25+ articles across all domains:
-
-- `6e-trading-system.md` -- Full trading system documentation
-- `how-sarthak-builds.md` -- Builder methodology and patterns
-- `zero-cost-architecture.md` -- Free-tier-only infrastructure philosophy
-- `trading-discipline-and-psychology.md` -- Hard-won trading lessons
-- `schema-design-as-leverage.md` -- How schema quality drives LLM accuracy
-- `building-with-claude-code.md` -- Agent-first development workflow
-- And more -- see `wiki/_index.md` for the full catalog
-
-## Article Format
-
-Every wiki article follows a consistent structure:
-
-```markdown
----
-title: Article Title
-domains: [#trading, #growth]
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
-sources:
-  - raw/articles/source-file.md
----
-
-# Article Title
-
-One-paragraph summary.
-
-## Key Insights
-## Details
-## Connections (backlinks to related articles)
-## Open Questions
-```
-
-## Rules
-
-1. **Never fabricate knowledge** -- every insight traces to a source in `raw/`
-2. **Prefer depth over breadth** -- one deep article beats five shallow ones
-3. **Cross-link aggressively** -- the value is in the connections
-4. **Preserve dissent** -- when thinking evolves, keep old reasoning with dates
-5. **Use Obsidian-compatible markdown** -- `[[backlinks]]`, standard frontmatter
-6. **Backlinks use kebab-case filenames** -- `[[how-sarthak-decides]]` not `[[How Sarthak Decides]]`
-
-## Daily Automation
-
-A daily cron script (`scripts/daily-brain-feed.sh`) extracts key insights from the day's Claude Code sessions and saves them as raw notes for ingestion. Runs at 11:30 PM IST.
-
-## Quick Start
-
-```bash
-# Add source material
-cp your-article.md raw/articles/
-
-# Ingest new materials (via Claude Code)
-claude "/brain ingest"
-
-# Query your knowledge base
-claude "/brain query What patterns connect trading discipline and product building?"
-
-# Run health check
-claude "/brain lint"
-
-# Find cross-domain connections
-claude "/brain connect"
-```
+| Item | State |
+|------|-------|
+| Ingest pipeline (raw to wiki) | Live |
+| 34 wiki articles across 7 domains | Live |
+| Cross-domain connection finder | Live |
+| Lint (broken links, orphans, stale) | Live |
+| Daily session insight extraction | Live |
+| Obsidian-compatible markdown | Live |
+| Query with grounded answers | Live |
 
 ---
 
-Built with [Claude Code](https://claude.ai/code)
+Built by [Sarthak Goel](https://github.com/sarthakgoel31)
