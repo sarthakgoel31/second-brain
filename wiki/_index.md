@@ -1,7 +1,7 @@
 # Knowledge Base Index
 
-Last updated: 2026-04-10
-Articles: 27 | Domains: 7 | Sources: 47 memory files + 4 conversation extracts + 5 meta-synthesis articles
+Last updated: 2026-05-01
+Articles: 34 | Domains: 7 | Sources: 47 memory files + 4 conversation extracts + 5 meta-synthesis + 7 new project articles
 
 ## By Domain
 
@@ -17,8 +17,13 @@ Articles: 27 | Domains: 7 | Sources: 47 memory files + 4 conversation extracts +
 - [[regional-language-as-core-value]] — 22 Indian languages, translation-first over keyword lists
 - [[flo-analytics-pipeline]] — Question→RAG→SQL→Snowflake→Summary, 20-25s, path to 10s
 - [[mbb-pricing-architecture]] — MECE v3 tier structure, feature gating, conversion funnels
-- [[the-flobiz-product-vision]] — the bigger picture: Indian SMBs, voice-first analytics, SDK as platform, startup vs enterprise tension
-- [[trading-vs-product-parallels]] — deep mental model overlaps: patience, validation, schema accuracy, risk management
+- [[the-flobiz-product-vision]] — the bigger picture: Indian SMBs, voice-first analytics, SDK as platform
+- [[trading-vs-product-parallels]] — deep mental model overlaps: patience, validation, schema accuracy
+- [[archana-pooja-platform]] — trust-first pooja booking, Panchang, Kundli, auto-refund, potential startup
+- [[site-auditor-product]] — AI UX audit tool, Lighthouse + LLM personas, live at audit.sarthakgoel.cv
+- [[social-tracker-saas]] — multi-tenant SaaS, trial→free→paid tiers, Invidious YT fallback
+- [[hisaabbot-whatsapp]] — WhatsApp expense splitter, NLP parsing, no app download
+- [[trial-to-paid-patterns]] — conversion funnels: trial without login, gate the expensive feature
 
 ### Engineering
 - [[zero-cost-architecture]] — free-tier stacking across all personal projects, no paid APIs
@@ -37,6 +42,7 @@ Articles: 27 | Domains: 7 | Sources: 47 memory files + 4 conversation extracts +
 - [[flo-analytics-pipeline]] — LLM SQL generation, Grok hallucinations, schema strictness
 - [[direct-sql-vs-llm-pipeline]] — knowing when NOT to use AI
 - [[vidtext-content-pipeline]] — local Whisper, free summarization, Chrome extension
+- [[llm-fallback-chains]] — Groq→Gemini→DeepSeek pattern, reusable across products
 
 ### Business
 - [[mbb-pricing-architecture]] — annual→monthly shift, data-driven feature gating
@@ -60,6 +66,7 @@ Articles: 27 | Domains: 7 | Sources: 47 memory files + 4 conversation extracts +
 - [[lessons-from-failures]] — every failure encoded into a system so it cannot repeat
 - [[trading-vs-product-parallels]] — cross-domain mental model transfers between trading and product
 - [[how-projects-are-born]] — the birth-to-maturation pipeline: irritation --> script --> project --> cron --> self-healing system
+- [[portfolio-and-visibility]] — Hardeep benchmark, Reddit/X posting, 30 projects zero posts
 
 ## Recent Updates
 - 2026-04-10: Knowledge base initialized with 19 articles from 47 memory files
@@ -70,3 +77,4 @@ Articles: 27 | Domains: 7 | Sources: 47 memory files + 4 conversation extracts +
 - 2026-04-10: Builder Content Strategy, VidText Content Pipeline, MBB Sales and Data Insights, Automation as Lifestyle, The Goel Family Builder (from content/business/growth memories)
 - 2026-04-10: Biometric Trading Journal (from today's trading journal session)
 - 2026-04-10: How Sarthak Builds, Lessons from Failures, The FloBiz Product Vision, Trading vs Product Parallels, How Projects Are Born (5 meta-synthesis articles cross-linking all existing articles)
+- 2026-05-01: Archana Pooja Platform, Site Auditor Product, Social Tracker SaaS, HisaabBot WhatsApp, LLM Fallback Chains, Trial-to-Paid Patterns, Portfolio & Visibility Strategy (7 new articles from April's work)

@@ -41,3 +41,18 @@
 
 ### Articles created
 25. Call Analyzer — ConvoZen Replacement (#business, #ai, #engineering, #product) — replaced ₹60K/month vendor with Cashflohero STT + Grok LLM, 94% cost savings, 22 analysis fields vs 1
+
+## 2026-05-01
+- Bulk update: 7 new articles from April's intensive building sprint
+- Major projects: Archana (pooja platform), Site Auditor (AI UX), Social Tracker (SaaS rebuild)
+- New patterns: LLM fallback chains, trial-to-paid conversion
+- Portfolio visibility strategy documented
+
+### Articles created
+26. Archana Pooja Platform (#product, #engineering, #business, #growth) — trust-first booking, Panchang, Kundli, auto-refund, 20 migrations, potential startup
+27. Site Auditor Product (#product, #engineering, #ai) — AI UX audit tool, Lighthouse + LLM personas, Groq→Gemini→DeepSeek fallback
+28. Social Tracker SaaS (#product, #engineering, #business) — multi-tenant rebuild, trial→free→paid tiers, Invidious YT fallback
+29. HisaabBot WhatsApp (#product, #engineering) — expense splitter + personal finance in WhatsApp, NLP parsing
+30. LLM Fallback Chains (#ai, #engineering) — Groq→Gemini→DeepSeek pattern, validate output, tag which LLM was used
+31. Trial-to-Paid Patterns (#product, #business, #growth) — trial without login, gate expensive features, inline CTAs
+32. Portfolio & Visibility Strategy (#growth, #content, #business) — 30 projects, zero posts, Hardeep benchmark

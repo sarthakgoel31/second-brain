@@ -178,6 +178,13 @@
   },
   "active": "12147f41affffc70",
   "lastOpenFiles": [
+    "hisaabbot-whatsapp.md",
+    "portfolio-and-visibility.md",
+    "trial-to-paid-patterns.md",
+    "social-tracker-saas.md",
+    "llm-fallback-chains.md",
+    "site-auditor-product.md",
+    "archana-pooja-platform.md",
     "how-sarthak-decides.md",
     "lessons-from-failures.md",
     "the-flobiz-product-vision.md",
@@ -196,13 +203,6 @@
     "mbb-pricing-architecture.md",
     "vidtext-content-pipeline.md",
     "builder-content-strategy.md",
-    "flo-analytics-pipeline.md",
-    "direct-sql-vs-llm-pipeline.md",
-    "sierra-chart-hard-won-learnings.md",
-    "regional-language-as-core-value.md",
-    "zero-cost-architecture.md",
-    "myvoicebooksai-product.md",
-    "trading-discipline-and-psychology.md",
-    "6e-trading-system.md"
+    "flo-analytics-pipeline.md"
   ]
 }
