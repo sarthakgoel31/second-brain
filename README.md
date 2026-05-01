@@ -6,6 +6,10 @@
 
 **Karpathy-style LLM knowledge base. Raw materials go in, interconnected wiki articles come out.**
 
+<p align="center">
+  <img src="docs/sb1.png" alt="Second Brain — Obsidian graph view of 34 interconnected articles" width="700" />
+</p>
+
 ## Why
 
 You read articles, have conversations, take notes, learn from failures -- but none of it compounds. Six months later, you cannot find the insight that changed how you think about a problem. Second Brain is a personal knowledge base where an LLM reads everything you feed it, synthesizes structured wiki articles with cross-references, and surfaces non-obvious connections across domains. It is Obsidian meets a librarian who reads everything and never forgets.
