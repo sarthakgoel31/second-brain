@@ -124,6 +124,63 @@ second-brain/
 | Obsidian-compatible markdown | Live |
 | Query with grounded answers | Live |
 
+## Fork This
+
+Start your own Second Brain in 3 steps:
+
+### Prerequisites
+
+- [Claude Code](https://claude.ai/code) installed
+- No MCP servers required -- runs entirely on local files
+
+### Install
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/sarthakgoel31/second-brain.git
+cd second-brain
+
+# 2. Clean out my knowledge (start fresh)
+rm -rf wiki/* raw/articles/* raw/papers/* raw/tweets/* raw/conversations/* raw/notes/*
+
+# 3. Copy the skill definition into Claude Code
+mkdir -p ~/.claude/skills/brain
+cp SKILL.md ~/.claude/skills/brain/SKILL.md
+
+# 4. Initialize your wiki
+# In Claude Code, type: /brain status
+```
+
+### Start Building Your Brain
+
+```bash
+# Drop your first source material into raw/
+cp ~/Downloads/interesting-article.md raw/articles/
+
+# In Claude Code:
+/brain ingest          # Process it into wiki articles
+/brain status          # See your knowledge base stats
+/brain query "what did I learn about X?"
+```
+
+### Customize
+
+Open `CLAUDE.md` to adjust:
+- **Domains** -- replace Trading/Product/Engineering with your own knowledge areas
+- **Article format** -- tweak frontmatter fields for your use case
+- **Daily feed** -- edit `scripts/daily-brain-feed.sh` to point to your Claude sessions directory
+- **Backlink style** -- uses `[[kebab-case]]` for Obsidian compatibility by default
+
+### Optional: Daily Auto-Feed
+
+```bash
+# Add to crontab to auto-extract insights from Claude sessions
+crontab -e
+# Add: 0 23 * * * /path/to/second-brain/scripts/daily-brain-feed.sh
+```
+
+The brain works with zero raw materials -- just start dropping files and running `/brain ingest`.
+
 ---
 
 Built by [Sarthak Goel](https://github.com/sarthakgoel31)
