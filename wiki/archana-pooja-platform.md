@@ -28,7 +28,7 @@ Most Indians want to book poojas online but trust is the barrier. Archana solves
 
 ### Architecture
 
-Full-stack Next.js on Vercel, Supabase Postgres, Razorpay payments, Resend emails, Cloudinary images. All services on sarthak.goel01@gmail.com. Live at myarchana.in since 2026-04-12.
+Full-stack Next.js on Vercel, Supabase Postgres, Razorpay payments, Resend emails, Cloudinary images. All services on <your-email>. Live at myarchana.in since 2026-04-12.
 
 ### Conversion Optimization
 
